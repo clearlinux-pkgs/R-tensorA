@@ -4,7 +4,7 @@
 #
 Name     : R-tensorA
 Version  : 0.36
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/tensorA_0.36.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensorA_0.36.tar.gz
 Summary  : Advanced tensors arithmetic with named indices
