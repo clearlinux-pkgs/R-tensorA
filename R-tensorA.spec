@@ -4,7 +4,7 @@
 #
 Name     : R-tensorA
 Version  : 0.36.1
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/tensorA_0.36.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensorA_0.36.1.tar.gz
 Summary  : Advanced Tensor Arithmetic with Named Indices
@@ -34,13 +34,13 @@ lib components for the R-tensorA package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556483518
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1570565241
 
 %install
-export SOURCE_DATE_EPOCH=1556483518
+export SOURCE_DATE_EPOCH=1570565241
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,7 +69,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -105,4 +105,3 @@ R CMD check --no-manual --no-examples --no-codoc tensorA || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/tensorA/libs/tensorA.so
 /usr/lib64/R/library/tensorA/libs/tensorA.so.avx2
-/usr/lib64/R/library/tensorA/libs/tensorA.so.avx512
